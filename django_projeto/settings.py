@@ -134,4 +134,4 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = 'login' # Define a URL para onde os usuários serão redirecionados se tentarem acessar uma view protegida sem estar logados
+LOGIN_URL = 'login' # Define a URL para onde os usuários serão redirecionados se tentarem acessar uma view protegida sem estar logados (modificado)
