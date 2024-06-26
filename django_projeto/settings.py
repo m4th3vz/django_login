@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',  # Adicione seu aplicativo aqui (modificado)
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'core' / 'templates'],  # Caminho para a pasta de templates
+        'DIRS': [BASE_DIR / 'core' / 'templates'],  # Caminho para a pasta de templates (modificado)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
