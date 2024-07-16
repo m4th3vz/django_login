@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+# o módulo os é usado para definir caminhos relativos (modificado)
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',  # Adicione seu aplicativo aqui (modificado)
+    # Adicione seu aplicativo aqui (modificado)
+    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,13 +56,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'django_projeto.urls'
 
 
-# Diretório base do projeto Django
+# Diretório base do projeto Django (modificado)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'core' / 'templates'],  # Caminho para a pasta de templates (modificado)
+        'DIRS': [BASE_DIR / 'core' / 'templates'],  # Caminho para a pasta de templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

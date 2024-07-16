@@ -1,15 +1,15 @@
-# Importando classes necessárias do Django
+# forms.py
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm  # Importa formulários de autenticação do Django
-from django.contrib.auth.models import User  # Importa o modelo de usuário padrão do Django
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.models import User
 
 # Definindo um formulário personalizado para criação de usuário
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
-        model = User  # Define que o modelo utilizado é o User do Django
-        fields = ('username', 'password1', 'password2')  # Define os campos do formulário: username, password1 (senha), password2 (confirmação de senha)
+        model = User
+        fields = ('username', 'password1', 'password2')
 
 # Definindo um formulário personalizado para autenticação
 class CustomAuthenticationForm(AuthenticationForm):
-    username = forms.CharField(label='Usuário')  # Campo para inserir o nome de usuário com o rótulo 'Usuário'
-    password = forms.CharField(label='Senha', widget=forms.PasswordInput)  # Campo para inserir a senha com o rótulo 'Senha', usando widget para ocultar a senha durante a digitação
+    username = forms.CharField(label='Usuário')
+    password = forms.CharField(label='Senha', widget=forms.PasswordInput)
