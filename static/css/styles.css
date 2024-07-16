@@ -54,7 +54,6 @@
 }
 
 /* Mantém o rodapé no final da página */
-/* É necessário que o conteúdo da página esteja dentro de <main></main> */
 html, body {
     height: 100%;
     margin: 0;
