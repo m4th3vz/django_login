@@ -6,12 +6,12 @@ from django.contrib.auth.decorators import login_required
 
 # Página principal
 def index(request):
-    return render(request, 'core/index.html')
+    return render(request, 'login/index.html')
 
 # Página login necessário
 @login_required
 def loginRequired(request):
-    return render(request, 'core/loginRequired.html')
+    return render(request, 'login/loginRequired.html')
 
 # Página de registro
 def register_view(request):
@@ -23,7 +23,7 @@ def register_view(request):
             return redirect('index')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'core/register.html', {'form': form})
+    return render(request, 'login/register.html', {'form': form})
 
 # Página de login
 def login_view(request):
@@ -38,4 +38,4 @@ def login_view(request):
                 return redirect('index')
     else:
         form = CustomAuthenticationForm() 
-    return render(request, 'core/login.html', {'form': form})
+    return render(request, 'login/login.html', {'form': form})
