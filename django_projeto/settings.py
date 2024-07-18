@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r!pd42p=3fw5%vydmi^7e@5hmjs*#w2h7a96s$d&8(go4lud)='
+SECRET_KEY = 'django-insecure-k+0%r@dtsy8iz9z&02gzz($5$(7+3c)=+jwd*%$d%0+*)0ks3i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Adicione seu aplicativo aqui (modificado)
-    'core.apps.CoreConfig',
+    'login.apps.LoginConfig'
 ]
 
 MIDDLEWARE = [
@@ -55,23 +55,21 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'django_projeto.urls'
 
-
 TEMPLATES = [
     {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.debug",
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
-
 
 WSGI_APPLICATION = 'django_projeto.wsgi.application'
 

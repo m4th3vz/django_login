@@ -20,7 +20,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('index')  # Corrigido para redirecionar para 'index'
+            return redirect('index')
     else:
         form = CustomUserCreationForm()
     return render(request, 'core/register.html', {'form': form})
@@ -35,7 +35,7 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index')  # Corrigido para redirecionar para 'index'
+                return redirect('index')
     else:
         form = CustomAuthenticationForm() 
     return render(request, 'core/login.html', {'form': form})
