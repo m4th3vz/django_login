@@ -1,17 +1,17 @@
-# urls.py
+# login/urls.py
 from django.urls import path
-from . import views
+from .views import IndexView, LoginRequiredView, RegisterView, LoginView
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     # Página principal
-    path('', views.index, name='index'),
+    path('', IndexView.as_view(), name='index'),
     # Página login necessário
-    path('loginRequired/', views.loginRequired, name='loginRequired'),
+    path('loginRequired/', LoginRequiredView.as_view(), name='loginRequired'),
     # Página de registro
-    path('register/', views.register_view, name='register'),
+    path('register/', RegisterView.as_view(), name='register'),
     # Página de login
-    path('login/', views.login_view, name='login'),
+    path('login/', LoginView.as_view(), name='login'),
     # Página de logout
     path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
 ]
